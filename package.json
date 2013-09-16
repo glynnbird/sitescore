@@ -1,5 +1,5 @@
 {
-  "name": "spideroku",
+  "name": "sitescore",
   "version": "1.0.0",
   "description": "Check if your website is up-to-date",
   "main": "main.js",
@@ -10,5 +10,9 @@
     "libphonenumber": "0.0.5",
     "cheerio": "0.11.0", 
     "async": "0.2.9"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
   }
 }
