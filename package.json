@@ -1,0 +1,14 @@
+{
+  "name": "spideroku",
+  "version": "1.0.0",
+  "description": "Check if your website is up-to-date",
+  "main": "main.js",
+  "dependencies": {
+    "express": "3.2.6",
+    "jade": "0.27.7",
+    "request": "2.21.0",
+    "libphonenumber": "0.0.5",
+    "cheerio": "0.11.0", 
+    "async": "0.2.9"
+  }
+}

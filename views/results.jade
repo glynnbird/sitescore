@@ -1,0 +1,105 @@
+!!! 5
+html(lang='en')  
+  include includes/header
+  body 
+
+    include includes/topbar                                             
+    
+    div.container
+
+      div.hero-unit
+        h1.pull-right #{results.score} / 100
+        h1 SITE SCORE
+        p Results for #{results.url}
+
+     
+      div.row
+        div.span6     
+          h2 Crawl
+      
+          div.row
+            div.span2 URL
+            div.span2 #{results.url}
+          if !results.success
+            div.alert.alert-error We could not fetch this web page
+          if results.redirectsTo
+            div.row
+              div.span2 Redirects to
+              div.span2 #{results.redirectsTo}
+          div.row
+            div.span2 Title
+            div.span2 #{results.title}
+        
+          h2 Meta data
+          div.row
+            div.span2 Meta Description
+            div.span2
+              if results.meta_description
+                i.icon-ok
+              else
+                i.icon-remove
+          div.row
+            div.span2 Meta Keywords
+            div.span2
+              if results.meta_keywords
+                i.icon-ok
+              else
+                i.icon-remove   
+      
+        div.span6
+      
+      
+          h2 Markup
+          div.row
+            div.span2 HTML Type
+            div.span2
+              if results.html5
+                i.icon-ok
+                span &nbsp;HTML5  
+              else if results.xhtml
+                i.icon-remove
+                span &nbsp;XHTML 
+              else if results.html4
+                i.icon-remove
+                span &nbsp;HTML4 
+              else
+                i.icon-remove
+                span &nbsp;unknown       
+          div.row
+            div.span2 Cookie Policy
+            div.span2
+              if results.cookie_policy
+                i.icon-ok
+              else
+                i.icon-remove                  
+          div.row
+            div.span2 Modern Markup
+            div.span2
+              if results.oldmarkup || results.tables || results.frames
+                i.icon-remove
+              else
+                i.icon-ok
+            
+          h2 Contact Information
+          div.row
+            div.span2 Telephone
+            div.span2
+              if results.telephone
+                i.icon-ok
+              else
+                i.icon-remove 
+          div.row
+            div.span2 Facebook
+            div.span2
+              if results.facebook
+                i.icon-ok
+              else
+                i.icon-remove   
+          div.row
+            div.span2 Twitter
+            div.span2
+              if results.twitter
+                i.icon-ok
+              else
+                i.icon-remove              
+    include includes/footer

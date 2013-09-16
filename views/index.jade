@@ -1,0 +1,19 @@
+!!! 5
+html(lang='en')  
+  include includes/header
+  body 
+
+    include includes/topbar                                             
+    
+    div.container
+
+      div.hero-unit
+        h1 SITE SCORE
+        p See how modern your website is
+        form(action="/go")
+          div
+            input.input-xxlarge(id="url",name="url",placeholder="http://www.yourwebsite.com",value="http://")
+           
+          input(type="submit") Go
+       
+    include includes/footer
