@@ -10,7 +10,9 @@ html(lang='en')
       div.hero-unit
         h1.pull-right #{results.score} / 100
         h1 SITE SCORE
-        p Results for #{results.url}
+        p Results for 
+          a(href=results.url,target='_new') #{results.url}
+        a(href='/') Try another site
 
      
       div.row

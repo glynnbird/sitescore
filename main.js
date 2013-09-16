@@ -32,6 +32,6 @@ app.get('/go', function(req, res) {
 });
 
 var port = process.env.PORT || 3000;
-
+console.log("Listening on port",port);
 app.listen(port);
 
