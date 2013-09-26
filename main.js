@@ -2,7 +2,9 @@
 var express = require('express');
 var app = express();
 var crawler = require("./lib/crawler.js");
-
+var webshot = require('webshot');
+var crypto = require('crypto');
+var fs = require('fs');
 
 // use the jade engine
 app.engine('jade', require('jade').__express);
@@ -29,6 +31,28 @@ app.get('/go', function(req, res) {
     res.render('error.jade', {"title": "Error"});
   }
     
+});
+
+app.get('/screenshot', function(req,res) {
+  
+  if(typeof req.query.url != "undefined" && req.query.url.length > 0) {
+    var hash = crypto.createHash('md5').update(req.query.url).digest("hex");
+    var tmpfile = '/tmp/'+hash+'.png';    
+    
+    fs.exists(tmpfile, function (exists) {
+      if(exists) {
+        res.sendfile(tmpfile);
+      } else {
+        webshot(req.query.url, tmpfile, function(err) {
+          res.sendfile(tmpfile);
+        });
+      }
+    });
+
+  } else {
+    res.send(404, 'Sorry, we cannot find that!');
+  }
+  
 });
 
 var port = process.env.PORT || 3000;

@@ -9,7 +9,8 @@
     "request": "2.21.0",
     "libphonenumber": "0.0.5",
     "cheerio": "0.11.0", 
-    "async": "0.2.9"
+    "async": "0.2.9",
+    "webshot": "0.5.1"
   },
   "engines": {
     "node": "0.10.x",
