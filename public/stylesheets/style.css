@@ -3,9 +3,17 @@
 }
 
 .devices {
-  background-image: url(/images/dev.png);
-  width:605px;
+  margin-left:90px;
+  background-image: url(/images/devices.png);
+  width:278px;
   height:205px;
+  position:relative;
+}
+
+.laptop {
+  background-image: url(/images/laptop.png);
+  width:500px;
+  height:322px;
   position:relative;
 }
 
@@ -19,22 +27,22 @@
 }
 
 .desktop {
-  top:24px;
-  left:60px;
-  width:230px;
-  height:144px;  
+  top:16px;
+  left:73px;
+  width:370px;
+  height:268px;  
 }
 
 .mobile {
   top:90px;
-  left:359px;
+  left:33px;
   width:55px;
   height:88px;  
 }
 
 .tablet {
   top:25px;
-  left:459px;
+  left:134px;
   width:118px;
   height:154px;  
 }
