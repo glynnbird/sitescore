@@ -11,18 +11,20 @@ html(lang='en')
         div.span6
         
           h1 SITE SCORE #{results.score} / 100
+          
+          div.progress
+            if results.score > 60
+              div.bar.bar-success(style='width:'+results.score+'%')
+            else if results.score > 40
+              div.bar.bar-warning(style='width:'+results.score+'%')
+            else
+              div.bar.bar-danger(style='width:'+results.score+'%')                  
+
           p Results for 
             a(href=results.url,target='_new') #{results.url}
-          a(href='/') Try another site
-        div.span6
-          span
-            img(src='/screenshot?url='+results.url,width='100%')
-          
-
-      div.row
-        div.span6     
+        
           h2 Crawl
-      
+
           div.row
             div.span2 URL
             div.span2 #{results.url}
@@ -35,7 +37,7 @@ html(lang='en')
           div.row
             div.span2 Title
             div.span2 #{results.title}
-        
+
           h2 Meta data
           div.row
             div.span2 Meta Description
@@ -50,11 +52,8 @@ html(lang='en')
               if results.meta_keywords
                 i.icon-ok
               else
-                i.icon-remove   
-      
-        div.span6
-      
-      
+                i.icon-remove  
+                
           h2 Markup
           div.row
             div.span2 HTML Type
@@ -85,7 +84,7 @@ html(lang='en')
                 i.icon-remove
               else
                 i.icon-ok
-            
+
           h2 Contact Information
           div.row
             div.span2 Telephone
@@ -107,5 +106,10 @@ html(lang='en')
               if results.twitter
                 i.icon-ok
               else
-                i.icon-remove              
+                i.icon-remove          
+        div.span6
+          span
+            a(href=results.url,target='_new')
+              img(src='/screenshot?url='+results.url,width='100%')
+            
     include includes/footer

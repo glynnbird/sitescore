@@ -10,10 +10,11 @@ html(lang='en')
       div.hero-unit
         h1 SITE SCORE
         p See how modern your website is
-        form(action="/go")
-          div
-            input.input-xxlarge(id="url",name="url",placeholder="http://www.yourwebsite.com",value="http://")
-           
-          input(type="submit") Go
+        p We spider the site and tell you
+        ul
+          li how modern the markup is
+          li if your contact information is visible
+          li whether your social media links are present
+        p Sites are scored out of 100. See how your website is today! Simple put your website addess in the form at the top and click Go!
        
     include includes/footer
