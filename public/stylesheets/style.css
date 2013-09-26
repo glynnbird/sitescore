@@ -1,3 +1,40 @@
 .container {
   margin-top:80px;
 }
+
+.devices {
+  background-image: url(/images/dev.png);
+  width:605px;
+  height:205px;
+  position:relative;
+}
+
+.ss {
+  position: absolute;
+  display:inline-block;
+  overflow:none;
+  margin:0;
+  background-size:contain;
+  background-repeat:no-repeat;
+}
+
+.desktop {
+  top:24px;
+  left:60px;
+  width:230px;
+  height:144px;  
+}
+
+.mobile {
+  top:90px;
+  left:359px;
+  width:55px;
+  height:88px;  
+}
+
+.tablet {
+  top:25px;
+  left:459px;
+  width:118px;
+  height:154px;  
+}

@@ -108,8 +108,11 @@ html(lang='en')
               else
                 i.icon-remove          
         div.span6
-          span
-            a(href=results.url,target='_new')
-              img(src='/screenshot?url='+results.url,width='100%')
+          div.devices
+            div.ss.desktop(style='background-image:url(/screenshot?url='+results.url+')') 
+            div.ss.mobile(style='background-image:url(/mscreenshot?url='+results.url+')')                 
+            div.ss.tablet(style='background-image:url(/tscreenshot?url='+results.url+')') 
+
+
             
     include includes/footer
