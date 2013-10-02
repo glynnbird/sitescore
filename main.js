@@ -12,6 +12,10 @@ app.engine('jade', require('jade').__express);
 // use compression where appropriate
 app.use(express.compress());
 
+// enable sessions
+app.use(express.cookieParser());
+app.use(express.session({secret: 'QWERTY'}));
+
 // server out our static directory as static files
 app.use(express.static(__dirname + '/public'));
 
@@ -25,6 +29,7 @@ app.get('/go', function(req, res) {
   if(typeof req.query.url != "undefined") {
     crawler.spider(req.query.url, function(d) {
   //    console.log(d);
+      req.session.lastdoc = d;
       res.render('results.jade', {"title":"Results","results": d});
     });
   } else {
@@ -35,6 +40,7 @@ app.get('/go', function(req, res) {
 
 app.get('/screenshot', function(req,res) {
   
+//  console.log(req.session.lastdoc);
   if(typeof req.query.url != "undefined" && req.query.url.length > 0) {
     var hash = crypto.createHash('md5').update(req.query.url).digest("hex");
     var tmpfile = '/tmp/'+hash+'.png';    
