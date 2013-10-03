@@ -38,6 +38,19 @@ app.get('/go', function(req, res) {
     
 });
 
+app.get('/api', function(req, res) {
+  
+//  console.log(req.query.url);
+  if(typeof req.query.url != "undefined") {
+    crawler.spider(req.query.url, function(d) {
+      res.send(d);
+    });
+  } else {
+    res.send({"success":0,"error":"Failed to spider "+req.query.url});
+  }
+    
+});
+
 app.get('/screenshot', function(req,res) {
   
 //  console.log(req.session.lastdoc);
