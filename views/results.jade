@@ -84,6 +84,17 @@ html(lang='en')
                 i.icon-remove
               else
                 i.icon-ok
+          if results.copyright
+            - var year = new Date().getFullYear();
+            div.row
+              div.span2 Copyright
+              div.span2
+                if results.copyright < year
+                  i.icon-remove
+                else
+                  i.icon-ok 
+                span &nbsp; #{results.copyright}  
+                       
 
           h2 Contact Information
           div.row
